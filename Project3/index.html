@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student GPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+            <div class="app-logo">GPA Calculator</div>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <section class="calculator-card">
+            <h1>Semester GPA Calculator</h1>
+            <p class="subtitle">Add your courses, credit hours, and letter grades to calculate your Grade Point Average.</p>
+
+            <form id="courseForm" onsubmit="addCourse(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="courseName">Course Title:</label>
+                        <input type="text" id="courseName" placeholder="e.g. Parallel Computing" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="creditHours">Credit Hours:</label>
+                        <input type="number" id="creditHours" min="1" max="6" value="3" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gradeSelect">Letter Grade:</label>
+                        <select id="gradeSelect" required>
+                            <option value="4.0">A (4.0)</option>
+                            <option value="3.5">B+ (3.5)</option>
+                            <option value="3.0">B (3.0)</option>
+                            <option value="2.5">C+ (2.5)</option>
+                            <option value="2.0">C (2.0)</option>
+                            <option value="1.0">D (1.0)</option>
+                            <option value="0.0">F (0.0)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="add-btn">+ Add Course</button>
+            </form>
+
+            <div class="table-container">
+                <table id="coursesTable">
+                    <thead>
+                        <tr>
+                            <th>Course Title</th>
+                            <th>Credit Hours</th>
+                            <th>Grade</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courseList">
+                        <tr id="emptyRow">
+                            <td colspan="4" class="empty-msg">No courses added yet. Add a course above to compute GPA.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="results-box">
+                <div class="result-item">
+                    <span>Total Credits:</span>
+                    <strong id="totalCredits">0</strong>
+                </div>
+                <div class="result-item highlight">
+                    <span>Semester GPA:</span>
+                    <strong id="gpaValue">0.00</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student GPA Calculator &bull; Created by Karan Chander</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

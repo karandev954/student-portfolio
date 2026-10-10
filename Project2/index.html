@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+            <div class="portal-logo">Sindh Tech University</div>
+            <ul class="nav-menu">
+                <li><a href="#departments">Departments</a></li>
+                <li><a href="#notices">Notice Board</a></li>
+                <li><a href="#inquiry">Inquiry Form</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <h1>Empowering Future Engineers & Scientists</h1>
+        <p>Explore world-class academic programs, faculty insights, and student resources.</p>
+    </section>
+
+    <main class="main-container">
+
+        <section id="departments" class="portal-section">
+            <h2>Academic Departments</h2>
+        
+            <div class="search-box">
+                <input type="text" id="courseSearch" placeholder="Search department or degree..." onkeyup="filterCourses()">
+            </div>
+
+            <div class="courses-grid" id="coursesGrid">
+
+                <div class="course-card">
+                    <div class="course-badge">Faculty of Engineering</div>
+                    <h3>Software Engineering</h3>
+                    <p>4-Year B.S. program covering full-stack web development, operating systems, algorithms, and distributed computing.</p>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-badge">Faculty of Computing</div>
+                    <h3>Computer Science</h3>
+                    <p>4-Year B.S. program focusing on data structures, artificial intelligence, database systems, and cybersecurity.</p>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-badge">Faculty of Technology</div>
+                    <h3>Information Technology</h3>
+                    <p>4-Year B.S. program specializing in cloud architecture, network administration, and enterprise software systems.</p>
+                </div>
+
+
+                <div class="course-card">
+                    <div class="course-badge">Faculty of Sciences</div>
+                    <h3>Data Science & AI</h3>
+                    <p>4-Year B.S. program exploring big data analytics, machine learning, neural networks, and statistical computing.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="notices" class="portal-section notice-section">
+            <h2>Campus Notice Board</h2>
+            <div class="notice-list">
+                <div class="notice-item">
+                    <span class="notice-date">Oct 10, 2026</span>
+                    <h4>Mid-Term Assignment Submissions Open</h4>
+                    <p>All 3rd-year engineering students are requested to submit coursework through the online portal.</p>
+                </div>
+                <div class="notice-item">
+                    <span class="notice-date">Oct 05, 2026</span>
+                    <h4>Annual Tech & Innovation Seminar</h4>
+                    <p>Join us at the Main Auditorium for guest lectures on cloud computing and distributed algorithms.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inquiry" class="portal-section inquiry-section">
+            <h2>Admission & General Inquiry</h2>
+            <p>Have questions about admissions or course details? Send us a message!</p>
+            
+            <form id="inquiryForm" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" placeholder="e.g. Karan Chander" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailAddr">Email Address:</label>
+                    <input type="email" id="emailAddr" placeholder="e.g. student@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="departmentSelect">Department of Interest:</label>
+                    <select id="departmentSelect" required>
+                        <option value="">Select a Department...</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Data Science & AI">Data Science & AI</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="messageText">Your Inquiry / Message:</label>
+                    <textarea id="messageText" rows="4" placeholder="Write your question here..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+
+            <div id="formSuccessMessage" class="success-box hidden">
+                ✅ Thank you! Your inquiry has been submitted successfully. We will reach out soon.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tech University Portal &bull; Created by Karan Chander</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
